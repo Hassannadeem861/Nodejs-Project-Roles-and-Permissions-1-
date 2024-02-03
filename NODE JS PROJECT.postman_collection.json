@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "0192d827-a947-4e62-a3a7-b4e79c5f2b11",
+		"name": "NODE JS PROJECT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29804237"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcwNjEwNzAyMSwiZXhwIjoxNzA2MTkzNDIxfQ.sMD9iI4joi9-ze594W7qyYrawlH-7hITQZbkJkqj5ps",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"newUser5558\",\r\n  \"password\": \"password123\",\r\n  \"role\": \"employee\",\r\n//   \"permissions\": [\"updateUser\", \"deleteUser\"]\r\n  \"permissions\": [\"updateUser\" ,\"deleteUser\",\"viewUsers\"]\r\n\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/users/register"
+					},
+					"response": []
+				},
+				{
+					"name": "assign Role & permissions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcwNjEwNzAyMSwiZXhwIjoxNzA2MTkzNDIxfQ.sMD9iI4joi9-ze594W7qyYrawlH-7hITQZbkJkqj5ps",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"newUser\",\r\n  \"password\": \"password123\",\r\n  \"role\": \"employee\",\r\n  \"userId\": 1,\r\n  \"permissions\": [\"updateUser\", \"deleteUser\"]\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/users/assignRole"
+					},
+					"response": []
+				},
+				{
+					"name": "All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/users/"
+					},
+					"response": []
+				},
+				{
+					"name": "Updated - User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcwNjA0NDUyNSwiZXhwIjoxNzA2MTMwOTI1fQ.pRkulJNC0y9QcxBOfA5_gZKW3DSWzZQt0RZ9Rq13Lm4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 2,\r\n        \"username\": \"zohaib\",\r\n        \"password\": \"zohaib\",\r\n        \"role\": \"employee\",\r\n      \"permissions\": [\"read\", \"write\"],\r\n     \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/users/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Deleted User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJuZXdVc2VyIGNoY2siLCJyb2xlIjoiZW1wbG95ZWUiLCJpYXQiOjE3MDYxMTkxMDcsImV4cCI6MTcwNjIwNTUwN30.qpafX8qqJ3jcJtArbzIl1QTOSzzRaF4e7PBWFLdplnA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/users/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"newUser\",\r\n  \"password\": \"password123\"\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/users/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Admin - Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"admin\"\r\n\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/users/login"
+					},
+					"response": []
+				},
+				{
+					"name": "assignPermissions",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
